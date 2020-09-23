@@ -16,10 +16,40 @@
     font-family: Graphik, Helvetica, Arial, sans-serif;
     margin-top: 5%;
     text-align: center;
+
+    @media screen and (max-width: 576px) {
+      font-size: 45px;
+    }
   }
 
   .font-25 {
     font-size: 25px;
+  }
+
+  .font-18-until-sm {
+    @media screen and (max-width: 576px) {
+      font-size: 18px;
+    }
+  }
+
+  .btn-black {
+    color: white;
+    background-color: rgb(24, 24, 24);
+
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+
+  .btn-white {
+    color: black;
+    background-color: white;
+
+    &:hover {
+      color: white;
+      background-color: rgb(24, 24, 24);
+    }
   }
 }
 
