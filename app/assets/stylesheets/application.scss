@@ -1,0 +1,25 @@
+@import "bootstrap";
+
+.home-header {
+  height: 700px;
+  background-color: #f4f0eb;
+  font-family: Graphik, Helvetica, Arial, sans-serif;
+
+  .intercom-logo {
+    width: 150px;
+    filter: grayscale(1) invert(1);
+  }
+
+  .header-title {
+    font-size: 78px;
+    font-weight: bold;
+    font-family: Graphik, Helvetica, Arial, sans-serif;
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .font-25 {
+    font-size: 25px;
+  }
+}
+
