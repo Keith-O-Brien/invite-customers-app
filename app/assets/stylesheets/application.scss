@@ -5,6 +5,10 @@
   background-color: #f4f0eb;
   font-family: Graphik, Helvetica, Arial, sans-serif;
 
+  &.small {
+    height: 225px;
+  }
+
   .intercom-logo {
     width: 150px;
     filter: grayscale(1) invert(1);

@@ -1,0 +1,50 @@
+<div class="col-12">
+  <div class="row home-header small pt-5">
+
+    <div class="col-11 col-lg-8 col-xl-7 mx-auto">
+      <div class="row">
+
+        <div class="col-12">
+          <%= link_to root_path do %>
+            <%= image_tag "intercom-logo.png", class: "intercom-logo" %>
+          <% end %>
+        </div>
+
+        <div class="col-12 mt-4">
+          <div class="font-25 text-center font-18-until-sm pt-4">
+            <p>Intercom customers within a 100km radius:</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-11 col-lg-8 col-xl-7 mx-auto mt-5">
+      <table class="table table-dark">
+        <thead class="thead-dark">
+          <tr>
+            <th>User_id</th>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @customers.order("id ASC").each do |customer| %>
+            <tr>
+              <td><%= customer.id %></td>
+              <td><%= customer.name %></td>
+              <td><%= customer.latitude %></td>
+              <td><%= customer.longitude %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>
