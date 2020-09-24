@@ -4,7 +4,11 @@ class InvitationsController < ApplicationController
   def create
     customers = customer_service.read_customers
 
-    redirect_to root_path
+    redirect_to invitations_path
+  end
+
+  def show
+
   end
 
   private
