@@ -5,7 +5,10 @@
       <div class="row">
 
         <div class="col-12">
-          <%= image_tag "intercom-logo.png", class: "intercom-logo" %>
+          <%= link_to root_path do %>
+            <%= image_tag "intercom-logo.png", class: "intercom-logo" %>
+          <% end %>
+
           <span class="float-right font-weight-bold font-25">Welcome!</span>
         </div>
 
