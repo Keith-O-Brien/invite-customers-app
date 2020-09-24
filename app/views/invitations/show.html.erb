@@ -18,6 +18,33 @@
 
       </div>
     </div>
-
   </div>
+
+  <div class="row">
+    <div class="col-11 col-lg-8 col-xl-7 mx-auto mt-5">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>User_id</th>
+            <th>Name</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @customers.each do |customer| %>
+            <tr>
+              <td><%= customer.id %></td>
+              <td><%= customer.name %></td>
+              <td><%= customer.longitude %></td>
+              <td><%= customer.latitude %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
 </div>

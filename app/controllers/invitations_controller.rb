@@ -1,20 +1,31 @@
 class InvitationsController < ApplicationController
 
+  def show
+    @customers = []
+    distance_km = 100
 
-  def create
-    customers = customer_service.read_customers
+    Customer.all.each do |customer|
+      if distance_service.within_distance(customer, distance_km)
+        @customers << customer
+      end
+    end
 
-    redirect_to invitations_path
   end
 
-  def show
+  def create
+    customer_service.read_customers
 
+    redirect_to invitations_path
   end
 
   private
 
   def customer_service
     @customer_service ||= CustomerService.new
+  end
+
+  def distance_service
+    @distance_service ||= DistanceService.new
   end
 
 end

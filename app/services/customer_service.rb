@@ -1,4 +1,5 @@
 class CustomerService
+
   def read_customers
     customers = []
     customer_data = File.read("app/assets/text_files/customer_list.txt")
