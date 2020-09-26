@@ -2,13 +2,13 @@ class InvitationsController < ApplicationController
   before_action :set_customers, only: :show
 
   def show
-
+    @onscreen = params[:print_to].to_sym.eql?(:screen)
   end
 
   def create
     customer_service.read_customers
 
-    redirect_to invitations_path
+    redirect_to invitations_path(print_to: params[:print_to])
   end
 
   private
