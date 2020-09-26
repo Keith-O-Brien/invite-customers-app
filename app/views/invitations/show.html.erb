@@ -33,7 +33,7 @@
         </thead>
 
         <tbody>
-          <% @customers.order("id ASC").each do |customer| %>
+          <% @customers.each do |customer| %>
             <tr>
               <td><%= customer.id %></td>
               <td><%= customer.name %></td>
