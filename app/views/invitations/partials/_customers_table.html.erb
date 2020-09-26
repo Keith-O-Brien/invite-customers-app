@@ -1,0 +1,21 @@
+<table class="table table-dark">
+  <thead class="thead-dark">
+  <tr>
+    <th>User_id</th>
+    <th>Name</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.id %></td>
+      <td><%= customer.name %></td>
+      <td><%= customer.latitude %></td>
+      <td><%= customer.longitude %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
