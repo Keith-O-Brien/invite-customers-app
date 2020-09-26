@@ -9,7 +9,7 @@ class CustomerService
       customer_poro = JSON.parse(data, object_class: OpenStruct)
 
       customer = Customer.find_or_create_by(id: customer_poro.user_id)
-      customer.update_attributes(
+      customer.update(
           longitude: customer_poro.longitude,
           latitude: customer_poro.latitude,
           name: customer_poro.name
