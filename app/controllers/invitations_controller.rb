@@ -10,9 +10,14 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    customer_service.read_customers
+    customers = customer_service.read_customers
 
-    redirect_to invitations_path(print_to: params[:print_to])
+    if customers.any?
+      redirect_to invitations_path(print_to: params[:print_to])
+    else
+      flash[:notice] = "I'm sorry, we could not read any customers from that file. Please check file format"
+      redirect_to root_path
+    end
   end
 
   private
