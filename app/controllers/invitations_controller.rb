@@ -27,7 +27,7 @@ class InvitationsController < ApplicationController
     distance_km = 100
 
     Customer.all.each do |customer|
-      if distance_service.within_distance(customer, distance_km)
+      if distance_service.is_within_distance(customer, distance_km)
         customer_ids << customer.id
       end
     end
