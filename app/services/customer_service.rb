@@ -21,4 +21,8 @@ class CustomerService
     customers
   end
 
+  def print_customers_to_file(customers)
+    File.write('app/assets/text_files/customers_within_100_km.txt', customers.pluck(:id, :name).map(&:to_s).join("\n"))
+  end
+
 end

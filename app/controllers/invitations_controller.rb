@@ -5,7 +5,7 @@ class InvitationsController < ApplicationController
     @onscreen = params[:print_to].to_sym.eql?(:screen)
 
     unless @onscreen
-      File.write('app/assets/text_files/customers_within_100_km.txt', @customers.pluck(:id, :name).map(&:to_s).join("\n"))
+      customer_service.print_customers_to_file(@customers)
     end
   end
 
