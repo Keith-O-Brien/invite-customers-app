@@ -12,7 +12,7 @@ Project is created with:
 * Rspec version 4.0.1
 	
 ## Setup
-Firstly clone this repo and navigate to the repo folder: 
+Firstly, clone this repo and navigate to the repo folder: 
 ```
 $ git clone https://github.com/Keith-O-Brien/invite-customers-app.git
 $ cd invite-customers-app
@@ -23,13 +23,13 @@ Bundle the gemfile:
 $ bundle install
 ```
 
-Next update yarn and install the web packages:
+Next, update yarn and install the web packages:
 ```
 $ yarn install --check-files
 $ npm install
 ```
 
-Finally set up the app database:
+Finally, set up the app database:
 ```
 $ rake db:{create,migrate}
 ```
@@ -69,6 +69,8 @@ $ bundle exec rspec
 ```
 
 Unit tests will return either a success or fail result. 
+
+###### Application written by Keith O Brien
 
 
 
