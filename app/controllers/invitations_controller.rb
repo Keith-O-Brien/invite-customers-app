@@ -1,11 +1,12 @@
 class InvitationsController < ApplicationController
   before_action :set_customers, only: :show
+  before_action :check_for_print_option, only: :create
 
   def show
-    @onscreen = params[:print_to].to_sym.eql?(:screen)
+    @print_to_file = params[:print_to]&.to_sym&.eql?(:file)
 
-    unless @onscreen
-      File.write('app/assets/text_files/customers_within_100_km.txt', @customers.pluck(:id, :name).map(&:to_s).join("\n"))
+    if @print_to_file
+      customer_service.print_customers_to_file(@customers)
     end
   end
 
@@ -27,12 +28,19 @@ class InvitationsController < ApplicationController
     distance_km = 100
 
     Customer.all.each do |customer|
-      if distance_service.within_distance(customer, distance_km)
+      if distance_service.is_within_distance(customer, distance_km)
         customer_ids << customer.id
       end
     end
 
     @customers = Customer.where(id: customer_ids).order("id ASC")
+  end
+
+  def check_for_print_option
+    if params[:print_to].nil?
+      flash[:notice] = "Please select how you would like the customer information to be printed."
+      return redirect_to root_path
+    end
   end
 
   def customer_service

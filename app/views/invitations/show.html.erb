@@ -20,12 +20,18 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-11 col-lg-8 col-xl-7 mx-auto mt-5">
-      <% if @onscreen %>
-        <%= render "invitations/partials/customers_table" %>
-      <% else %>
+      <% if @print_to_file %>
         <p class="text-center font-20">Your results have been printed to a text file in the assets folder. Thank you!</p>
+
+      <% else %>
+        <% if @customers.any? %>
+          <%= render "invitations/partials/customers_table" %>
+        <% else %>
+          <p class="text-center">You do not have any customers yet. Please return to the homescreen and choose one of the print options. Thank you!</p>
+        <% end %>
+
       <% end %>
     </div>
   </div>

@@ -9,7 +9,7 @@ class CustomerService
       customer_poro = JSON.parse(data, object_class: OpenStruct)
 
       customer = Customer.find_or_create_by(id: customer_poro.user_id)
-      customer.update_attributes(
+      customer.update(
           longitude: customer_poro.longitude,
           latitude: customer_poro.latitude,
           name: customer_poro.name
@@ -19,6 +19,10 @@ class CustomerService
     end
 
     customers
+  end
+
+  def print_customers_to_file(customers)
+    File.write('app/assets/text_files/customers_within_100_km.txt', customers.pluck(:id, :name).map(&:to_s).join("\n"))
   end
 
 end

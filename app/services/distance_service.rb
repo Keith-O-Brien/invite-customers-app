@@ -1,6 +1,6 @@
 class DistanceService
 
-  def within_distance(customer, distance_limit_km)
+  def is_within_distance(customer, distance_limit_km)
     lat1 = customer.latitude
     lon1 = customer.longitude
 
@@ -20,7 +20,7 @@ class DistanceService
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
 
     distance_km = 6371 * c * 1
-    return true if distance_km <= distance_limit_km
+    return distance_km <= distance_limit_km
   end
 
 end

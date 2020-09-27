@@ -1,4 +1,4 @@
 class Customer < ActiveRecord::Base
-  validates :name, presence: true
+  validates :name, :longitude, :latitude, presence: true
 
 end
