@@ -3,7 +3,10 @@
 .home-header {
   height: 700px;
   background-color: #f4f0eb;
-  font-family: Graphik, Helvetica, Arial, sans-serif;
+
+  &.small {
+    height: 225px;
+  }
 
   .intercom-logo {
     width: 150px;
@@ -25,35 +28,56 @@
       font-size: 45px;
     }
   }
+}
 
-  .font-25 {
-    font-size: 25px;
+.font-20 {
+  font-size: 20px;
+}
+
+.font-25 {
+  font-size: 25px;
+}
+
+.font-18-until-sm {
+  @media screen and (max-width: 576px) {
+    font-size: 18px;
   }
+}
 
-  .font-18-until-sm {
-    @media screen and (max-width: 576px) {
-      font-size: 18px;
-    }
-  }
+.btn-black {
+  color: white;
+  background-color: rgb(24, 24, 24);
 
-  .btn-black {
-    color: white;
-    background-color: rgb(24, 24, 24);
-
-    &:hover {
-      color: black;
-      background-color: white;
-    }
-  }
-
-  .btn-white {
+  &:hover {
     color: black;
     background-color: white;
+  }
+}
 
-    &:hover {
-      color: white;
-      background-color: rgb(24, 24, 24);
-    }
+.btn-white {
+  color: black;
+  background-color: white;
+
+  &:hover {
+    color: white;
+    background-color: rgb(24, 24, 24);
+  }
+}
+
+body {
+  font-family: Graphik, Helvetica, Arial, sans-serif;
+}
+
+.flash.notice {
+  padding: 10px 30px;
+  background: #B61D1D;
+  text-align: center;
+  color: white;
+}
+
+.mt-extra-xl-5 {
+  @media screen and (min-width: 1500px) {
+    margin-top: 3rem !important;
   }
 }
 
