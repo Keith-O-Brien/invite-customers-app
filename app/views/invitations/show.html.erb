@@ -24,8 +24,8 @@
     <div class="col-11 col-lg-8 col-xl-7 mx-auto mt-5">
       <% if @print_to_file %>
         <p class="text-center font-20">Your results have been printed to a text file in the assets folder. Thank you!</p>
-      <% else %>
 
+      <% else %>
         <% if @customers.any? %>
           <%= render "invitations/partials/customers_table" %>
         <% else %>
