@@ -15,4 +15,10 @@ RSpec.describe CustomerService do
     end
   end
 
+  describe "print customers to file function" do
+    it "creates a file" do
+      expect(File).to exist("#{Rails.root}/app/assets/text_files/customers_within_100_km.txt")
+    end
+  end
+
 end
