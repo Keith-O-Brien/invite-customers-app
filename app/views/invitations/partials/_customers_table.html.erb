@@ -9,13 +9,14 @@
   </thead>
 
   <tbody>
-  <% @customers.each do |customer| %>
-    <tr>
-      <td><%= customer.id %></td>
-      <td><%= customer.name %></td>
-      <td><%= customer.latitude %></td>
-      <td><%= customer.longitude %></td>
-    </tr>
-  <% end %>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= customer.id %></td>
+          <td><%= customer.name %></td>
+          <td><%= customer.latitude %></td>
+          <td><%= customer.longitude %></td>
+        </tr>
+      <% end %>
+
   </tbody>
 </table>
